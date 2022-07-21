@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>編集画面</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <h1>Flask Study Note - {{ title }}</h1>
+
+  <form action="/update" method="post">
+    <input type="hidden" name="id" value="{{ edit_data.id }}">
+    <label>タイトル:
+      <input type="text" name="title" value="{{ edit_data.title }}">
+    </label>
+    <p></p>
+      <label>本文：<br>
+        <textarea name="body" cols="50" rows="10">{{ edit_data.body }}</textarea>
+      </label>
+    <p></p>
+    <button type="submit">送信</button>
+    </form>
+
+  <p><a href="/">TOPに戻る</a></p>
+
+  <footer>
+    <p>○</p>
+  </footer>
+</body>
+</html>
